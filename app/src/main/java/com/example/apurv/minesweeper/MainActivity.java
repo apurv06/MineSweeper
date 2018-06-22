@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public MSbutton[][] board;
 
 
-    public int length=10;
-    public int height=14;
-
+    public int length=16;
+    public int height=20;
+    float textsize=6;
 
     public final double Hard=0.6;
 public final double Medium =0.4;
@@ -82,6 +82,8 @@ Intent intent=getIntent();
                 button.setOnClickListener(this);
                 button.setOnLongClickListener(this);
                 button.setCoordinate(i,j);
+
+                button.setTextSize(textsize);
                 button.setBackground(getDrawable(R.drawable.button_start));
                 LinearLayout row = rows.get(i);
                 row.addView(button);
