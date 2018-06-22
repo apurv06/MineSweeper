@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/reset"
+        android:checkable="false"
+        android:title="Reset" />
+    <item
+        android:id="@+id/easy"
+        android:checkable="false"
+        android:title="Easy" />
+    <item
+        android:id="@+id/medium"
+        android:checkable="false"
+        android:title="Medium" />
+    <item
+        android:id="@+id/hard"
+        android:checkable="false"
+        android:title="Hard" />
+
+</menu>
