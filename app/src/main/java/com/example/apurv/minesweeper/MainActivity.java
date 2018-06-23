@@ -37,21 +37,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     float textsize=6;
 
     public final double Hard=0.6;
-public final double Medium =0.4;
-public final double Easy=0.25;
-public double difficulty=Easy;
+    public final double Medium =0.4;
+    public final double Easy=0.25;
+    public double difficulty=Easy;
 
-String name;
+    int grid;
+    String name;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-Intent intent=getIntent();
+        Intent intent=getIntent();
         name=intent.getStringExtra("name");
         difficulty=intent.getDoubleExtra("diff",0.25);
         rootLayout=findViewById(R.id.root);
+        grid=intent.getIntExtra("grid",1);
         setupBoard();
     }
 
@@ -61,6 +63,8 @@ Intent intent=getIntent();
         status=1;
         board = new MSbutton[height][length];
         rootLayout.removeAllViews();
+
+        setuplayoutsize();
 
         for (int i = 0; i < height; i++) {
 
@@ -93,6 +97,33 @@ Intent intent=getIntent();
 
 
 
+    }
+
+    private void setuplayoutsize() {
+
+        switch (grid)
+        {
+            case 1:
+                textsize=20;
+                length=10;
+                height=14;
+                break;
+            case 2:
+                textsize=14;
+                length=12;
+                height=16;
+                break;
+            case 3:
+                textsize=10;
+                length=14;
+                height=18;
+                break;
+            case 4:
+                textsize=6;
+                length=16;
+                height=20;
+                break;
+        }
     }
 
     private void setupmines() {
